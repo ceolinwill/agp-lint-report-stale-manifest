@@ -5,6 +5,8 @@
 
 Lint runs some manifest checks in the report task (`lintReport<Variant>`), from the merged manifest, but `AndroidLintTask` doesn't declare the merged manifest as an input. After an edit that changes only the manifest, and no resource reference, the report task is skipped as `UP-TO-DATE` and Gradle replays its previous result: lint passes on a manifest with an error, and keeps failing after the error is fixed.
 
+Reported at https://issuetracker.google.com/issues/582928429.
+
 ## Reproduction
 
 ```sh
